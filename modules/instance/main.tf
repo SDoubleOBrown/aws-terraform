@@ -1,22 +1,3 @@
-# resource "aws_instance" "main" {
-#   ami           = var.ami  
-#   instance_type = var.instance_type
-#   key_name      = var.key_name
-#   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
-#   subnet_id = element(aws_subnet.subnet[*].id, count.index)
-
-#   user_data     = <<-EOF
-#                   #!/bin/bash
-#                   sudo apt-get update -y
-#                   sudo apt-get install -y ansible docker.io
-#                   sudo usermod -aG docker ubuntu
-#                   EOF
-
-#   tags = {
-#     Name = "${var.environment}-instance"
-#   }
-# }
-
 resource "aws_instance" "instance" {
     ami = var.ami
     instance_type = var.type
